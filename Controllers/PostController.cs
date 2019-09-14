@@ -41,7 +41,7 @@ namespace Blog.Controllers
 
             dao.Adicionar(novoPost);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Post");
 
         }
 
