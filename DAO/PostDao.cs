@@ -1,5 +1,6 @@
 ﻿using Blog.Infra;
 using Blog.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -59,6 +60,35 @@ namespace Blog.DAO
 
                 contexto.Post.Remove(postSelecionado);
 
+                contexto.SaveChanges();
+
+            };
+
+        }
+
+        public Post BuscarId(int id)
+        {
+
+            using (var contexto = new BlogContext())
+            {
+
+                Post postSelecionado = contexto.Post.Where(c => c.Id == id).FirstOrDefault();
+
+                //Post postSelecionado = contexto.Post.Find(id);
+
+                return postSelecionado; 
+
+            };
+
+        }
+
+        public void Alterar(Post novoPost)
+        {
+
+            using (var contexto = new BlogContext())
+            {
+
+                contexto.Entry(novoPost).State = EntityState.Modified;
                 contexto.SaveChanges();
 
             };

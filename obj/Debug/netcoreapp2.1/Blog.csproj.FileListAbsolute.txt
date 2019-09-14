@@ -48,3 +48,4 @@ C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.Vie
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.dll
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.pdb
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Post\Visualizar.g.cshtml.cs

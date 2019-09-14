@@ -64,6 +64,30 @@ namespace Blog.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult Visualizar(int id)
+        {
+
+            PostDao dao = new PostDao();
+
+            Post postEncontrado = dao.BuscarId(id);
+
+            return View(postEncontrado);
+
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(Post novoPost)
+        {
+
+            PostDao dao = new PostDao();
+
+            dao.Alterar(novoPost);
+
+            return RedirectToAction("Index", "Post");
+
+        }
+
 
     }
 }
