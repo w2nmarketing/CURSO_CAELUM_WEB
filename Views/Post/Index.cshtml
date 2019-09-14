@@ -4,6 +4,9 @@
 
 <hr />
 
+<a href="/post">Listar Todos</a>
+
+<hr />
 <a href="/post/novo">Adicionar Novo</a>
 
 <hr />
@@ -14,6 +17,7 @@
             <th>TÍTULO</th>
             <th>RESUMO</th>
             <th>CATEGORIA</th>
+            <th>AÇÃO</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +26,8 @@
         <tr>
             <td> <strong>@p.Titulo</strong> </td>
             <td> @p.Resumo </td>
-            <td> @p.Categoria </td>
+            <td> <a href="/post/categoria/@p.Categoria">@p.Categoria</a> </td>
+            <td><a href="/post/excluir/@p.Id">Excluir</a></td>
         </tr>
         }
     </tbody>

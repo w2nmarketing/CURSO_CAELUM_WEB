@@ -1,7 +1,6 @@
 ﻿using Blog.Infra;
 using Blog.Models;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace Blog.DAO
@@ -19,6 +18,17 @@ namespace Blog.DAO
 
             };
 
+        }
+
+        public List<Post> ListarPostCategoria(string categoria)
+        {
+
+            using (var contexto = new BlogContext())
+            {
+
+                return contexto.Post.Where(c => c.Categoria == categoria).ToList();
+
+            };
 
         }
 
@@ -35,8 +45,23 @@ namespace Blog.DAO
 
         }
 
+        public void Excluir(int id)
+        {
 
+            using (var contexto = new BlogContext())
+            {
 
+                //var postSelecionado = contexto.Post.Where(c => c.Id == id);
+
+                var postSelecionado = contexto.Post.Find(id);
+
+                contexto.Post.Remove(postSelecionado);
+
+                contexto.SaveChanges();
+
+            };
+
+        }
 
 
 

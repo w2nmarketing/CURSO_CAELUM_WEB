@@ -16,18 +16,18 @@ namespace Blog.Models
 
         public Post() { }
 
-        public Post(string categoria, string titulo)
-        {
-            this.Categoria = categoria;
-            this.Titulo = titulo;
-        }
+        //public Post(string categoria, string titulo)
+        //{
+        //    this.Categoria = categoria;
+        //    this.Titulo = titulo;
+        //}
 
-        public Post(string categoria, string titulo, string resumo)
-        {
-            this.Categoria = categoria;
-            this.Titulo = titulo;
-            this.Resumo = resumo;
-        }
+        //public Post(string categoria, string titulo, string resumo)
+        //{
+        //    this.Categoria = categoria;
+        //    this.Titulo = titulo;
+        //    this.Resumo = resumo;
+        //}
 
     }
 }

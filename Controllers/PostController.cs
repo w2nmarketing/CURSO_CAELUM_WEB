@@ -22,8 +22,6 @@ namespace Blog.Controllers
 
             PostDao registros = new PostDao();
 
-            registros.ListarPost();
-
             return View(registros.ListarPost());
 
         }
@@ -44,6 +42,28 @@ namespace Blog.Controllers
             return RedirectToAction("Index", "Post");
 
         }
+
+        public IActionResult Categoria([Bind(Prefix = "id")] string nomeCategoria)
+        {
+
+            PostDao registros = new PostDao();
+        
+            return View("Index", registros.ListarPostCategoria(nomeCategoria));
+            
+        }
+
+        [HttpGet]
+        public IActionResult Excluir(int id)
+        {
+
+            PostDao dao = new PostDao();
+
+            dao.Excluir(id);
+
+            return RedirectToAction("Index", "Post");
+
+        }
+
 
     }
 }
