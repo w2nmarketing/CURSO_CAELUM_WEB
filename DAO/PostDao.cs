@@ -8,6 +8,8 @@ namespace Blog.DAO
     public class PostDao
     {
 
+        #region ENTITY
+
         public List<Post> ListarPost()
         {
 
@@ -51,9 +53,9 @@ namespace Blog.DAO
             using (var contexto = new BlogContext())
             {
 
-                //var postSelecionado = contexto.Post.Where(c => c.Id == id);
+                Post postSelecionado = contexto.Post.Where(c => c.Id == id).FirstOrDefault();
 
-                var postSelecionado = contexto.Post.Find(id);
+                //Post postSelecionado = contexto.Post.Find(id);
 
                 contexto.Post.Remove(postSelecionado);
 
@@ -63,7 +65,7 @@ namespace Blog.DAO
 
         }
 
-
+        #endregion
 
         #region ADO_NET
 
