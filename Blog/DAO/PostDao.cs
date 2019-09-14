@@ -13,11 +13,11 @@ namespace Blog.DAO
 
             List<Post> lista_Posts = new List<Post>();
 
-            using (SqlConnection conexao = ConnectionFactory.CriaConexao()) // SUGAR SINTAXE
+            using (SqlConnection conexao = ConnectionFactory.CriaConexao())
             {
 
                 SqlCommand cmd = conexao.CreateCommand();
-                cmd.CommandText = "SELECT * FROM Post ORDER BY Categoria DESC;";
+                cmd.CommandText = "SELECT * FROM Post;";
                 SqlDataReader leitor = cmd.ExecuteReader();
 
                 while (leitor.Read())
@@ -30,6 +30,21 @@ namespace Blog.DAO
             }
 
             return lista_Posts;
+
+        }
+
+        public void Adicionar(Post novoPost)
+        {
+
+            using (SqlConnection conexao = ConnectionFactory.CriaConexao())
+            {
+
+                SqlCommand cmd = conexao.CreateCommand();
+                cmd.CommandText = $"INSERT INTO Post (Titulo, Resumo, Categoria) " +
+                    $"VALUES ('{novoPost.Titulo}', '{novoPost.Resumo}', '{novoPost.Categoria}');";
+                cmd.ExecuteNonQuery();
+
+            }
 
         }
     }

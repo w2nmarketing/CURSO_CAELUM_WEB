@@ -37,11 +37,11 @@ namespace Blog.Controllers
         public IActionResult Adiciona(Post novoPost)
         {
 
-            return View();
+            PostDao dao = new PostDao();
 
-            //this.Lista_Posts.Add(novoPost);
+            dao.Adicionar(novoPost);
 
-            //return View("Index", this.Lista_Posts);
+            return RedirectToAction("Index");
 
         }
 
