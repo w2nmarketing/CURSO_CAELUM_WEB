@@ -1,14 +1,20 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
+﻿using Blog.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 
 namespace Blog.Infra
 {
-    public class ConnectionFactory
+    public class BlogContext : DbContext
     {
 
-        public static SqlConnection CriaConexao()
+        // DbSet < NOME_DA_CLASS > NOME_DA_TABELA 
+
+        public DbSet<Post> Post { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -18,11 +24,9 @@ namespace Blog.Infra
 
             string stringConexao = configuration.GetConnectionString("Blog");
 
-            SqlConnection conexao = new SqlConnection(stringConexao);
-
-            conexao.Open();
-
-            return conexao;
+            optionsBuilder.UseSqlServer(stringConexao);
         }
+
+
     }
 }
