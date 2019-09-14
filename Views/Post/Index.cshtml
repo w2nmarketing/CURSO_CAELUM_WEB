@@ -1,0 +1,26 @@
+﻿@model List<Blog.Models.Post>
+
+<h2>Lista dos Posts</h2>
+
+<hr />
+
+<table>
+    <thead>
+        <tr>
+            <th>TÍTULO</th>
+            <th>RESUMO</th>
+            <th>CATEGORIA</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+        <tr>
+            <td> <strong>@p.Titulo</strong> </td>
+            <td> @p.Resumo </td>
+            <td> @p.Categoria </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
