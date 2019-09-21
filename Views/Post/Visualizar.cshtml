@@ -1,8 +1,10 @@
 ﻿@model Blog.Models.Post
 
-<h2>Visualizar</h2>
+<h2>Visualizar Post #@Model.Id</h2>
 
 <form method="POST" action="/post/alterar">
+
+    @Html.ValidationSummary()
 
     <input type="hidden" name="id" value="@Model.Id" maxlength="50" />
 
@@ -11,6 +13,8 @@
         <input type="text" name="Titulo" value="@Model.Titulo" maxlength="50" />
     </label>
 
+    @Html.ValidationMessage("Titulo")
+
     <hr />
 
     <label>
@@ -18,16 +22,18 @@
         <input type="text" name="Resumo" value="@Model.Resumo" maxlength="200" />
     </label>
 
-    <hr />
+    @Html.ValidationMessage("Resumo")
 
+    <hr />
 
     <label>
         Categoria:
         <input type="text" name="Categoria" value="@Model.Categoria" maxlength="20" />
     </label>
 
-    <hr />
+    @Html.ValidationMessage("Categoria")
 
+    <hr />
 
     <button name="Enviar" value="sim">Alterar Cadastro</button>
 

@@ -1,29 +1,37 @@
 ﻿<h2>Novo</h2>
 
+@model Blog.Models.Post
+
 <form method="POST" action="/post/adiciona">
+
+    @Html.ValidationSummary()
 
     <label>
         Título:
-        <input type="text" name="Titulo" value="" maxlength="50" />
+        <input type="text" name="Titulo" value="@Model.Titulo" maxlength="50" />
     </label>
+
+    @Html.ValidationMessage("Titulo")
 
     <hr />
 
     <label>
         Resumo:
-        <input type="text" name="Resumo" value="" maxlength="200" />
+        <input type="text" name="Resumo" value="@Model.Resumo" maxlength="200" />
     </label>
 
-    <hr />
+    @Html.ValidationMessage("Resumo")
 
+    <hr />
 
     <label>
         Categoria:
-        <input type="text" name="Categoria" value="" maxlength="20" />
+        <input type="text" name="Categoria" value="@Model.Categoria" maxlength="20" />
     </label>
 
-    <hr />
+    @Html.ValidationMessage("Categoria")
 
+    <hr />
 
     <button name="Enviar" value="sim">Enviar Cadastro</button>
 

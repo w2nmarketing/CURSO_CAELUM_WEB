@@ -11,12 +11,28 @@
 
 <hr />
 
+<style>
+
+    table { }
+    tr { }
+
+    th {
+        background-color: darkcyan;
+    }
+
+    td, th {
+        padding: 5px;
+        border: 1px solid darkcyan;
+    }
+</style>
+
 <table>
     <thead>
         <tr>
             <th>TÍTULO</th>
             <th>RESUMO</th>
             <th>CATEGORIA</th>
+            <th>DATA PUBLICAÇÃO</th>
             <th>AÇÃO</th>
         </tr>
     </thead>
@@ -27,7 +43,29 @@
             <td><a href="/post/visualizar/@p.Id"> <strong>@p.Titulo</strong> </a></td>
             <td> @p.Resumo </td>
             <td> <a href="/post/categoria/@p.Categoria">@p.Categoria</a> </td>
-            <td><a href="/post/excluir/@p.Id">Excluir o ID #@p.Id</a></td>
+            <td>
+
+                @if (p.Publicado == true)
+                {
+                    @p.DataPublicacao
+                }
+                else
+                {
+                <strong>Não Publicado</strong>
+                }
+
+            </td>
+            <td>
+                
+                <a href="/post/excluir/@p.Id">Excluir o ID #@p.Id</a>
+
+                <br />
+
+                @if(p.Publicado == false)
+                {
+                    <a href="/post/publicar/@p.Id">Publicar o ID #@p.Id</a>
+                }
+            </td>
         </tr>
         }
     </tbody>

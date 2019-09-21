@@ -28,18 +28,34 @@ namespace Blog.Controllers
 
         public IActionResult Novo()
         {
-            return View();
+            return View(new Post());
         }
 
         [HttpPost]
         public IActionResult Adiciona(Post novoPost)
         {
 
-            PostDao dao = new PostDao();
+            //if (string.IsNullOrEmpty(novoPost.Titulo) ||
+            //    string.IsNullOrEmpty(novoPost.Categoria) ||
+            //    string.IsNullOrEmpty(novoPost.Resumo))
+            //{
 
-            dao.Adicionar(novoPost);
+            //    return View("Novo");
 
-            return RedirectToAction("Index", "Post");
+            //}
+
+            if (ModelState.IsValid)
+            {
+
+                PostDao dao = new PostDao();
+
+                dao.Adicionar(novoPost);
+
+                return RedirectToAction("Index", "Post");
+
+            }
+
+            return View("Novo", novoPost);
 
         }
 
@@ -80,9 +96,27 @@ namespace Blog.Controllers
         public IActionResult Alterar(Post novoPost)
         {
 
+            if (ModelState.IsValid)
+            {
+
+                PostDao dao = new PostDao();
+
+                dao.Alterar(novoPost);
+
+                return RedirectToAction("Index", "Post");
+            }
+
+            return View("Visualizar", novoPost);
+
+        }
+
+        [HttpGet]
+        public IActionResult Publicar(int id)
+        {
+            
             PostDao dao = new PostDao();
 
-            dao.Alterar(novoPost);
+            dao.Publicar(id);
 
             return RedirectToAction("Index", "Post");
 

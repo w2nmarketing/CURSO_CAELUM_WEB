@@ -1,6 +1,7 @@
 ﻿using Blog.Infra;
 using Blog.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -88,7 +89,29 @@ namespace Blog.DAO
             using (var contexto = new BlogContext())
             {
 
-                contexto.Entry(novoPost).State = EntityState.Modified;
+                contexto.Post.Update(novoPost);
+                contexto.SaveChanges();
+
+                //contexto.Entry(novoPost).State = EntityState.Modified;
+                //contexto.SaveChanges();
+
+            };
+
+        }
+
+        public void Publicar(int id)
+        {
+
+            using (var contexto = new BlogContext())
+            {
+
+                Post postSelecionado = contexto.Post.Find(id);
+
+                postSelecionado.Publicado = true;
+                postSelecionado.DataPublicacao = DateTime.Now;
+
+                contexto.Post.Update(postSelecionado);
+
                 contexto.SaveChanges();
 
             };
