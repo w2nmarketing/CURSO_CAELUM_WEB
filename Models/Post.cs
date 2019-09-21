@@ -12,10 +12,6 @@ namespace Blog.Models
         //[Column("id")]
         public int Id { get; set; }
 
-        [StringLength(50, ErrorMessage = "Campo com no máximo 50 caracteres")]
-        [Required(ErrorMessage = "Categoria é Obrigatorio")]
-        public string Categoria { get; set; }
-
         [StringLength(100, ErrorMessage = "Campo com no máximo 100 caracteres")]
         [Required(ErrorMessage = "Título é Obrigatorio")]
         public string Titulo { get; set; }
@@ -23,6 +19,10 @@ namespace Blog.Models
         [StringLength(200, ErrorMessage = "Campo com no máximo 200 caracteres")]
         [Required(ErrorMessage = "Resumo é Obrigatorio")]
         public string Resumo { get; set; }
+
+        [StringLength(50, ErrorMessage = "Campo com no máximo 50 caracteres")]
+        [Required(ErrorMessage = "Categoria é Obrigatorio")]
+        public string Categoria { get; set; }
 
         public bool Publicado { get; set; }
         public DateTime? DataPublicacao { get; set; }

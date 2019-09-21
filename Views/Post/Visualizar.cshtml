@@ -10,7 +10,7 @@
 
     <label>
         Título:
-        <input type="text" name="Titulo" value="@Model.Titulo" maxlength="50" />
+        <input type="text" name="Titulo" value="@Model.Titulo" maxlength="100" required />
     </label>
 
     @Html.ValidationMessage("Titulo")
@@ -19,7 +19,7 @@
 
     <label>
         Resumo:
-        <input type="text" name="Resumo" value="@Model.Resumo" maxlength="200" />
+        <input type="text" name="Resumo" value="@Model.Resumo" maxlength="200" required />
     </label>
 
     @Html.ValidationMessage("Resumo")
@@ -28,7 +28,7 @@
 
     <label>
         Categoria:
-        <input type="text" name="Categoria" value="@Model.Categoria" maxlength="20" />
+        <input type="text" name="Categoria" value="@Model.Categoria" maxlength="50" required />
     </label>
 
     @Html.ValidationMessage("Categoria")
@@ -39,3 +39,11 @@
 
 </form>
 
+
+
+<script src="~/js/jquery.js"></script>
+<script src="~/js/jquery.validate.js"></script>
+
+<script>
+    $("form").validate();
+</script>
