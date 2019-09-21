@@ -3,10 +3,6 @@
 <h2>Lista dos Posts</h2>
 
 <hr />
-
-<a href="/post">Listar Todos</a>
-
-<hr />
 <a href="/post/novo">Adicionar Novo</a>
 
 <hr />
@@ -29,6 +25,7 @@
 <table>
     <thead>
         <tr>
+            <th>AÇÃO VISUALIZAR</th>
             <th>TÍTULO</th>
             <th>RESUMO</th>
             <th>CATEGORIA</th>
@@ -40,6 +37,9 @@
         @foreach(var p in Model)
         {
         <tr>
+            <td>
+                @Html.ActionLink("Visualizar Post", "visualizar", "post", new { p.Id } )
+            </td>
             <td><a href="/post/visualizar/@p.Id"> <strong>@p.Titulo</strong> </a></td>
             <td> @p.Resumo </td>
             <td> <a href="/post/categoria/@p.Categoria">@p.Categoria</a> </td>
@@ -47,11 +47,11 @@
 
                 @if (p.Publicado == true)
                 {
-                    @p.DataPublicacao
+                    @Html.Raw(String.Format("{0:dd/MM/yyyy}", p.DataPublicacao))
                 }
                 else
                 {
-                <strong>Não Publicado</strong>
+                    @Html.Raw("Não")
                 }
 
             </td>

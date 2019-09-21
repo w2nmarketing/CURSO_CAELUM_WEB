@@ -2,6 +2,12 @@
 
 <h2>Visualizar Post #@Model.Id</h2>
 
+<hr />
+
+<a href="/post">Listar Todos</a>
+
+<hr />
+
 <form method="POST" action="/post/alterar">
 
     @Html.ValidationSummary()
@@ -41,8 +47,8 @@
 
 
 
-<script src="~/js/jquery.js"></script>
-<script src="~/js/jquery.validate.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
 
 <script>
     $("form").validate();

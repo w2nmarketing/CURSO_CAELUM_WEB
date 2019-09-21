@@ -26,6 +26,8 @@ namespace Blog.Controllers
 
         }
 
+        #region ADICIONAR_REGISTRO
+
         public IActionResult Novo()
         {
             return View(new Post());
@@ -58,6 +60,8 @@ namespace Blog.Controllers
             return View("Novo", novoPost);
 
         }
+        #endregion
+
 
         public IActionResult Categoria([Bind(Prefix = "id")] string nomeCategoria)
         {
