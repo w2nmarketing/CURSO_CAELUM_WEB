@@ -30,7 +30,6 @@ C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.dll
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.pdb
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.Views.dll
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\bin\Debug\netcoreapp2.1\Blog.Views.pdb
-C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csprojAssemblyReference.cache
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CoreCompileInputs.cache
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.RazorAssemblyInfo.cache
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.RazorAssemblyInfo.cs
@@ -42,10 +41,16 @@ C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.Raz
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Post\Index.g.cshtml.cs
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Post\Novo.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Post\Visualizar.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\Post.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Scripts.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.RazorTargetAssemblyInfo.cache
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.RazorTargetAssemblyInfo.cs
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.Views.pdb
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.dll
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.pdb
 C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csproj.CopyComplete
-C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Post\Visualizar.g.cshtml.cs
+C:\Users\aspnet8437\Documents\MARCELO\Blog\Blog\obj\Debug\netcoreapp2.1\Blog.csprojAssemblyReference.cache

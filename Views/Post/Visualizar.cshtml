@@ -1,4 +1,6 @@
-﻿@model Blog.Models.Post
+﻿
+
+@model Post
 
 <h2>Visualizar Post #@Model.Id</h2>
 
@@ -8,18 +10,15 @@
 
 <hr />
 
-<form method="POST" action="/post/alterar">
+<form asp-action="alterar" asp-controller="post" method="POST">
 
     @Html.ValidationSummary()
 
-    <input type="hidden" name="id" value="@Model.Id" maxlength="50" />
+    <input asp-for="Id" hidden />
 
-    <label>
-        Título:
-        <input type="text" name="Titulo" value="@Model.Titulo" maxlength="100" required />
-    </label>
-
-    @Html.ValidationMessage("Titulo")
+    <label asp-for="Titulo">Titulo 2</label>
+    <input asp-for="Titulo" required />
+    <span asp-validation-for="Categoria"></span>
 
     <hr />
 
@@ -47,9 +46,3 @@
 
 
 
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-
-<script>
-    $("form").validate();
-</script>
