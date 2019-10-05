@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.DAO;
+using Blog.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +33,11 @@ namespace Blog
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<BlogContext>(); 
+            services.AddTransient<PostDao>();
+
+            //services.AddSingleton<>(); // desde que o projeto e iniciado
+            //services.AddScoped<>(); // tempo de vida do controller
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -56,8 +63,14 @@ namespace Blog
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Post}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Post}/{action=Index}/{id?}");
+
             });
+
         }
     }
 }

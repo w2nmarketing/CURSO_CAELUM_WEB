@@ -1,14 +1,40 @@
 ﻿<html>
 <head>
     <title>Sistema de Blog</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+
 </head>
-<body style="background-color: lightskyblue; ">
+<body>
 
-    <h1>_ Layout</h1>
 
-    <div>
+    <div class="container clearfix">
 
-        @RenderBody()
+        <header>
+
+            @Html.Partial("inc_topo")
+
+        </header>
+
+        <main>
+
+            @RenderBody()
+
+        </main>
+
+        <aside>
+
+            @Html.Partial("inc_menu")
+
+        </aside>
+
+        <footer>
+
+            (c) 2019 - W2N
+
+        </footer>
 
     </div>
 

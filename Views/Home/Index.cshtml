@@ -1,8 +1,37 @@
-﻿@model string;
+﻿@model List<Post>
 
-<h2>Olá, Mundo</h2>
+<h2>SITE POST</h2>
 
-<p>Página de Teste</p>
+<table>
+    <thead>
+        <tr>
+            <th>TÍTULO</th>
+            <th>RESUMO</th>
+            <th>CATEGORIA</th>
+            <th>DATA PUBLICAÇÃO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td><strong>@p.Titulo</strong> </td>
+                <td> @p.Resumo </td>
+                <td> <a href="/post/categoria/@p.Categoria">@p.Categoria</a> </td>
+                <td>
 
-<p>@Model</p>
+                    @if (p.Publicado == true)
+                    {
+                        @Html.Raw(String.Format("{0:dd/MM/yyyy}", p.DataPublicacao))
+                    }
+                    else
+                    {
+                        @Html.Raw("Não")
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
