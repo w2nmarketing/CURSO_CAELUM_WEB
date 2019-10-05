@@ -1,0 +1,48 @@
+﻿
+
+@model Post
+
+<h2>Visualizar Post #@Model.Id</h2>
+
+<hr />
+
+<a href="/admin/post">Listar Todos</a>
+
+<hr />
+
+<form asp-action="alterar" asp-controller="post" method="POST">
+
+    @Html.ValidationSummary()
+
+    <input asp-for="Id" hidden />
+
+    <label asp-for="Titulo">Titulo 2</label>
+    <input asp-for="Titulo" required />
+    <span asp-validation-for="Categoria"></span>
+
+    <hr />
+
+    <label>
+        Resumo:
+        <input type="text" name="Resumo" value="@Model.Resumo" maxlength="200" required />
+    </label>
+
+    @Html.ValidationMessage("Resumo")
+
+    <hr />
+
+    <label>
+        Categoria:
+        <input type="text" name="Categoria" value="@Model.Categoria" maxlength="50" required />
+    </label>
+
+    @Html.ValidationMessage("Categoria")
+
+    <hr />
+
+    <button name="Enviar" value="sim">Alterar Cadastro</button>
+
+</form>
+
+
+

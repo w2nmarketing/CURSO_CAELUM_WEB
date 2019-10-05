@@ -10,6 +10,13 @@ namespace Blog.DAO
     public class PostDao
     {
 
+        private readonly BlogContext _contexto; // SO PODE SER INSTANCIADO NO CONTRUTOR
+
+        public PostDao(BlogContext contexto)
+        {
+            _contexto = contexto;
+        }
+
         #region ENTITY
 
         public List<Post> ListarPost()
@@ -23,6 +30,22 @@ namespace Blog.DAO
             };
 
         }
+
+
+
+        public List<Post> ListarPostPublicado()
+        {
+
+            using (var contexto = new BlogContext())
+            {
+
+                return contexto.Post.Where(p => p.Publicado == true).ToList();
+
+            };
+
+        }
+
+
 
         public List<Post> ListarPostCategoria(string categoria)
         {

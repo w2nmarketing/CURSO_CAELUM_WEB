@@ -1,0 +1,26 @@
+﻿
+@model Post
+
+<h2>Novo</h2>
+
+<hr />
+
+<a href="/admin/post">Listar Todos</a>
+
+<hr />
+
+<form method="POST" action="/admin/post/adiciona">
+
+    @Html.ValidationSummary()
+
+    @Html.EditorFor(p => p)
+
+    <hr>
+
+    <button name="Enviar" value="sim">Enviar Cadastro</button>
+
+</form>
+
+@section Scripts {
+    @Html.Partial("_Scripts")
+}

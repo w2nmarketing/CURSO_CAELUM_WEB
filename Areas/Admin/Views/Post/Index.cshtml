@@ -1,0 +1,75 @@
+﻿@model List<Post>
+
+<h2>Lista dos Posts</h2>
+
+<hr />
+<a href="/admin/post/novo">Adicionar Novo</a>
+
+<hr />
+
+<style>
+
+    table { }
+    tr { }
+
+    th {
+        background-color: darkcyan;
+    }
+
+    td, th {
+        padding: 5px;
+        border: 1px solid darkcyan;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>AÇÃO VISUALIZAR</th>
+            <th>TÍTULO</th>
+            <th>RESUMO</th>
+            <th>CATEGORIA</th>
+            <th>DATA PUBLICAÇÃO</th>
+            <th>AÇÃO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink("Visualizar Post", "visualizar", "post", new { p.Id } )
+            </td>
+            <td><a href="/admin/post/visualizar/@p.Id"> <strong>@p.Titulo</strong> </a></td>
+            <td> @p.Resumo </td>
+            <td> <a href="/admin/post/categoria/@p.Categoria">@p.Categoria</a> </td>
+            <td>
+
+                @if (p.Publicado == true)
+                {
+                    @Html.Raw(String.Format("{0:dd/MM/yyyy}", p.DataPublicacao))
+                }
+                else
+                {
+                    @Html.Raw("Não")
+                }
+
+            </td>
+            <td>
+                
+                <a href="/admin/post/excluir/@p.Id">Excluir o ID #@p.Id</a>
+
+                <br />
+
+                @if(p.Publicado == false)
+                {
+                    <a href="/admin/post/publicar/@p.Id">Publicar o ID #@p.Id</a>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+    <title>Sistema de Blog</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+
+    <div class="container clearfix">
+
+        <header>
+
+            @Html.Partial("inc_topo")
+
+        </header>
+
+        <main>
+
+            @RenderBody()
+
+        </main>
+
+        <aside>
+
+            @Html.Partial("inc_menu")
+
+        </aside>
+
+        <footer>
+
+            (c) 2019 - W2N
+
+        </footer>
+
+    </div>
+
+    @RenderSection("Scripts", false)
+
+</body>
+</html>

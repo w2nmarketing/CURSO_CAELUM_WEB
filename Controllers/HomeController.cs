@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.DAO;
+using Blog.Infra;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -13,16 +15,10 @@ namespace Blog.Controllers
         public IActionResult Index()
         {
 
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddEnvironmentVariables();
+            PostDao registros = new PostDao(new BlogContext());
 
-            IConfiguration configuration = builder.Build();
+            return View(registros.ListarPostPublicado());
 
-            string Config = configuration.GetValue<string>("nome");
-
-            return View("Index",Config);
         }
     }
 }
